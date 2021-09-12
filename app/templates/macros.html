@@ -1,0 +1,5 @@
+{% macro displayNews(current_news_list) %}
+    {% for current_news in current_news_list %}
+        <li> <a href="/news/{{current_news.id}}">{{ current_news.name}} </li></a>
+    {% endfor %}
+{% endmacro %}
