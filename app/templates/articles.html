@@ -1,0 +1,20 @@
+{% for current_news in articles %}
+
+
+<p>{{ current_news.author}}</p>
+
+<p>{{current_news.title}}</p>
+
+<a href="{{ current_news.url}}">
+    <p>{{ current_news.description}}</p>
+</a>
+
+<div class="jumbotron">
+    <img class="img-responsive" src="{{current_news.urlToImage}}" alt="images">
+</div>
+
+<p>{{ current_news.publishedAt}}</p>
+
+<p>{{ current_news.content}}</p>
+
+{% endfor %}
