@@ -79,3 +79,29 @@ def get_articles(id):
             articles_results = process_articles(articles_results_list)
 
     return articles_results
+
+
+def process_articles(articles_list):
+
+    """
+    Function that process news result and transform them to a list of objects
+    Args:
+        articles_list: A list of dictionary that returns news details
+    return:
+         articles_results: A list of news objects
+    """
+    articles_results = []
+    for articles_item in articles_list:
+       title =  articles_item.get('title')
+       author =  articles_item.get('author')
+       description =  articles_item.get('description')
+       url =  articles_item.get('url')
+       urlToImage =  articles_item.get('urlToImage')
+       publishedAt =  articles_item.get('publishedAt')
+       content =  articles_item.get('content')
+       if urlToImage:
+            articles_object = Articles(
+                    title, author, description, url,       urlToImage, publishedAt, content )
+            articles_results.append(articles_object)
+            
+    return  articles_results
