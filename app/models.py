@@ -9,3 +9,16 @@ class News:
         self.description = description
         self.category = category
         self.country = country
+
+
+
+class Articles:
+    get_articles = []
+    def __init__(self,title,author,url,description, urlToImage, publishedAt, content):
+        self.title = title
+        self.author = author
+        self.url = url
+        self.description= description
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
+        self.content = content
