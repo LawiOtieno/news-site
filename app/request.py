@@ -25,11 +25,13 @@ def get_news():
     Function that gets the json response to our url request
     """
 
-    get_news_url ='https://newsapi.org/v2/top-headlines/sources?apiKey={NEWS_API_KEY}'
+    get_news_url ='https://newsapi.org/v2/top-headlines/sources?apiKey=c45dcc6e4bc447678d2dcc61f134605d'
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
         get_news_response = json.loads(get_news_data)
+
         news_results = None
+
         if get_news_response['sources']:
             news_results_list = get_news_response['sources']
             news_results = process_results(news_results_list)
@@ -56,6 +58,7 @@ def process_results(news_list):
        url = news_item.get('url')
        category = news_item.get('category')
        country = news_item.get('country')
+       
        if name:
                 news_object = News(id, name,  description, url, category, country )
                 news_results.append(news_object)
@@ -69,7 +72,7 @@ def get_articles(id):
     """
 
     
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={NEWS_API_KEY}'.format(id)
+    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=c45dcc6e4bc447678d2dcc61f134605d'.format(id)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)

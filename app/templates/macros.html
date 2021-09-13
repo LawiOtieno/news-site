@@ -1,5 +1,40 @@
-{% macro displayNews(current_news_list) %}
-    {% for current_news in current_news_list %}
-        <li> <a href="/news/{{current_news.id}}">{{ current_news.name}} </li></a>
-    {% endfor %}
-{% endmacro %}
+<!-- {% macro displayNews(current_news_list) %}
+    <div class="row g-4">
+        <div class="col-8">
+            www
+        </div>
+        <div class="col-4">
+            {% for current_news in current_news_list %}
+                <li> <a href="/news/{{current_news.id}}">{{ current_news.name}} </li></a>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %} -->
+
+{% macro displayNews(current_news_list) %} {% for current_news in
+    current_news_list %}
+    <div class="col-md-4">
+      <div
+        class="card"
+        style="
+          box-sizing: border-box;
+          border: rgb(142, 185, 125) solid;
+          padding: 2px;
+          border-radius: 3%;
+          margin: 5px;
+        "
+      >
+        <div class="card-body">
+            <a href="/news/{{current_news.id}}">
+                <h5 style="color: rgb(160, 47, 12); font-family: sans-serif"class="card-title text-center">{{ current_news.name}}</h5>
+            </a>
+          
+          <p style="font-family: 'Open Sans', sans-serif" class="card-text">
+            {{current_news.url}}
+          </p>
+          <a href="/news/{{current_news.id}}" class="btn btn-info-sm">Read Articles</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% endmacro %}
+    

@@ -26,7 +26,7 @@ Web application for users to view latest news from different sources which they 
 
 * Run application in live server:
 > chmod a+x start.sh
-* 
+
 > ./start.sh
 * View the application in your browser:
 > http://127.0.0.1:5000/

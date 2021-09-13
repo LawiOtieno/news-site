@@ -17,9 +17,12 @@ def index():
 
 @main.route("/news/<news_id>")
 def articles(news_id):
+
     """
     view news page function that returns the news detail page and its data from a source
     """
+
+    
     #get news based on source id
     articles = get_articles(news_id)
     print(articles)
